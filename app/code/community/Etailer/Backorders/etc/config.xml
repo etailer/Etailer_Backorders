@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<config>
+    <global>
+       <models>
+          <backorders>
+              <rewrite>
+                  <api2_product_rest_admin_v1>Etailer_Backorders_Model_Api2_Product_Rest_Admin_V1</api2_product_rest_admin_v1>
+              </rewrite>
+          </backorders>
+       </models>
+    </global>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Etailer_Backorders before="Mage_Adminhtml">Etailer_Backorders_Catalog_ProductController</Etailer_Backorders>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+</config>
