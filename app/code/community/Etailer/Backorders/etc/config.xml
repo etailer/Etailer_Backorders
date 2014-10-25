@@ -2,6 +2,9 @@
 <config>
     <global>
         <models>
+            <etailer_backorders>
+                <class>Etailer_Backorders_Model</class>
+            </etailer_backorders>
             <catalog>
                 <rewrite>
                     <api2_product_rest_admin_v1>Etailer_Backorders_Model_Api2_Product_Rest_Admin_V1</api2_product_rest_admin_v1>
@@ -30,7 +33,7 @@
             <core_block_abstract_prepare_layout_before>
                 <observers>
                     <etailer_backorders_columns_on_product_grid>
-                        <class>Etailer_Backorders_Model_Observer_Adminhtml</class>
+                        <class>etailer_backorders/observer_adminhtml</class>
                         <method>addColumnsToGrid</method>
                     </etailer_backorders_columns_on_product_grid>
                 </observers>
@@ -38,7 +41,7 @@
             <catalog_product_collection_load_before>
                 <observers>
                     <etailer_backorders_catalog_product>
-                        <class>Etailer_Backorders_Model_Observer_Adminhtml</class>
+                        <class>etailer_backorders/observer_adminhtml</class>
                         <method>joinFieldsToCollection</method>
                     </etailer_backorders_catalog_product>
                 </observers>
@@ -51,7 +54,7 @@
                 <observers>
                     <etailer_backorders>
                         <type>singleton</type>
-                        <class>Etailer_Backorders_Model_Observer</class>
+                        <class>etailer_backorders/observer</class>
                         <method>catalogProductIsSalableAfter</method>
                     </etailer_backorders>
                 </observers>
