@@ -1,13 +1,18 @@
 <?xml version="1.0"?>
 <config>
     <global>
-       <models>
-          <backorders>
-              <rewrite>
-                  <api2_product_rest_admin_v1>Etailer_Backorders_Model_Api2_Product_Rest_Admin_V1</api2_product_rest_admin_v1>
-              </rewrite>
-          </backorders>
-       </models>
+        <models>
+            <catalog>
+                <rewrite>
+                    <api2_product_rest_admin_v1>Etailer_Backorders_Model_Api2_Product_Rest_Admin_V1</api2_product_rest_admin_v1>
+                </rewrite>
+            </catalog>
+            <cataloginventory>
+                <rewrite>
+                    <stock_item>Etailer_Backorders_Model_Stock_Item</stock_item>
+                </rewrite>
+            </cataloginventory>
+        </models>
     </global>
     <admin>
         <routers>
@@ -20,4 +25,17 @@
             </adminhtml>
         </routers>
     </admin>
+    <frontend>
+        <events>
+            <catalog_product_is_salable_after>
+                <observers>
+                    <etailer_backorders>
+                        <type>singleton</type>
+                        <class>Etailer_Backorders_Model_Observer</class>
+                        <method>catalogProductIsSalableAfter</method>
+                    </etailer_backorders>
+                </observers>
+            </catalog_product_is_salable_after>
+        </events>
+    </frontend>
 </config>
