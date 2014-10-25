@@ -24,3 +24,4 @@ Please test this extensively before using in production as I have not checked a 
 
 * [http://www.magentocommerce.com/boards/viewthread/288259/](http://www.magentocommerce.com/boards/viewthread/288259/)
 * [http://magento.stackexchange.com/questions/4201/limit-product-backorder-qty](http://magento.stackexchange.com/questions/4201/limit-product-backorder-qty)
+* [http://magento.stackexchange.com/questions/41300/limit-backorder-qty-of-the-product](http://magento.stackexchange.com/questions/41300/limit-backorder-qty-of-the-product)
