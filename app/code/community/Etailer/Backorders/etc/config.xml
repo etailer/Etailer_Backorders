@@ -25,6 +25,26 @@
             </adminhtml>
         </routers>
     </admin>
+    <adminhtml>
+        <events>
+            <core_block_abstract_prepare_layout_before>
+                <observers>
+                    <etailer_backorders_columns_on_product_grid>
+                        <class>Etailer_Backorders_Model_Observer_Adminhtml</class>
+                        <method>addColumnsToGrid</method>
+                    </etailer_backorders_columns_on_product_grid>
+                </observers>
+            </core_block_abstract_prepare_layout_before>
+            <catalog_product_collection_load_before>
+                <observers>
+                    <etailer_backorders_catalog_product>
+                        <class>Etailer_Backorders_Model_Observer_Adminhtml</class>
+                        <method>joinFieldsToCollection</method>
+                    </etailer_backorders_catalog_product>
+                </observers>
+            </catalog_product_collection_load_before>
+        </events>
+    </adminhtml>
     <frontend>
         <events>
             <catalog_product_is_salable_after>
