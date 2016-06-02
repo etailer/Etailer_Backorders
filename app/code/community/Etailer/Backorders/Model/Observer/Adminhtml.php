@@ -9,7 +9,7 @@ class Etailer_Backorders_Model_Observer_Adminhtml
 
         if ($block instanceof Mage_Adminhtml_Block_Catalog_Product_Grid
             || $block instanceof Mage_Adminhtml_Block_Catalog_Product_Edit_Tab_Super_Config_Grid
-            || $block instanceof Mage_Adminhtml_Block_Widget_Grid
+            || ($block instanceof Mage_Adminhtml_Block_Widget_Grid && $block->getNameInLayout() === 'category.product.grid')
         ) {
             $block->addColumnAfter('min_qty',
                 array(
